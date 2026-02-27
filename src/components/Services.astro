@@ -4,41 +4,45 @@ import { siteConfig } from "../config";
 const brand = siteConfig.brand;
 ---
 
-<section id="marca" class="py-20 md:py-28 bg-[#111111]">
+<section id="marca" class="py-24 md:py-32 bg-[#111111] relative overflow-hidden">
+  <!-- Subtle glow -->
+  <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-[#d4a84b]/[0.02] rounded-full blur-[120px] pointer-events-none"></div>
+
   <div class="max-w-6xl mx-auto px-6">
 
     <!-- Section title -->
-    <div class="text-center mb-16 reveal">
+    <div class="text-center mb-20 reveal">
       <span class="text-[#d4a84b] text-sm uppercase tracking-[0.3em] font-medium">La Marca</span>
-      <h2 class="font-['Bebas_Neue'] text-5xl md:text-6xl text-white mt-3">{brand.name}</h2>
-      <div class="w-16 h-[2px] bg-[#d4a84b]/40 mx-auto mt-4"></div>
+      <h2 class="font-['Bebas_Neue'] text-5xl md:text-7xl text-white mt-3">{brand.name}</h2>
+      <div class="w-20 h-[2px] bg-gradient-to-r from-transparent via-[#d4a84b]/60 to-transparent mx-auto mt-5"></div>
     </div>
 
-    <!-- Brand card -->
+    <!-- Brand card (premium) -->
     <div class="reveal stagger-1 max-w-3xl mx-auto mb-16">
-      <div class="bg-[#1a1a1a] border border-[#2a2a2a] rounded-2xl p-8 md:p-10 gold-glow">
-        <div class="flex items-start gap-4 mb-4">
-          <div class="w-12 h-12 rounded-xl bg-[#d4a84b]/10 flex items-center justify-center flex-shrink-0">
-            <svg class="w-6 h-6 text-[#d4a84b]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+      <div class="gold-border-gradient rounded-2xl p-8 md:p-12">
+        <div class="flex items-start gap-5 mb-5">
+          <div class="w-14 h-14 rounded-xl bg-[#d4a84b]/10 flex items-center justify-center flex-shrink-0 border border-[#d4a84b]/20">
+            <svg class="w-7 h-7 text-[#d4a84b]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
           </div>
           <div>
             <h3 class="text-white text-xl font-semibold">{brand.aka}</h3>
-            <span class="text-[#a3a3a3] text-sm">{brand.years}</span>
+            <span class="text-[#a3a3a3]/60 text-sm">{brand.years}</span>
           </div>
         </div>
-        <p class="text-[#a3a3a3] leading-relaxed">{brand.description}</p>
-        <a href={brand.instagram} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 mt-6 text-[#d4a84b] text-sm hover:underline">
+        <p class="text-[#a3a3a3] leading-relaxed text-[15px]">{brand.description}</p>
+        <a href={brand.instagram} target="_blank" rel="noopener noreferrer" class="group inline-flex items-center gap-2 mt-8 text-[#d4a84b] text-sm font-medium hover:text-[#e0b85c] transition-colors">
           <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
           @wallstotalsport · {brand.followers} seguidores
+          <svg class="w-3 h-3 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
         </a>
       </div>
     </div>
 
-    <!-- Product grid -->
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+    <!-- Product grid (premium cards) -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-5 md:gap-6">
       {brand.products.map((product, i) => (
-        <div class={`reveal stagger-${i + 1} bg-[#1a1a1a] border border-[#2a2a2a] rounded-xl p-6 text-center card-hover gold-glow`}>
-          <div class="w-14 h-14 rounded-full bg-[#d4a84b]/10 flex items-center justify-center mx-auto mb-4">
+        <div class={`reveal stagger-${i + 1} group bg-[#1a1a1a] border border-[#2a2a2a] rounded-xl p-7 text-center card-hover`}>
+          <div class="w-16 h-16 rounded-full bg-[#d4a84b]/10 flex items-center justify-center mx-auto mb-5 group-hover:bg-[#d4a84b]/15 transition-colors border border-[#d4a84b]/10">
             {product.icon === "gloves" && (
               <svg class="w-7 h-7 text-[#d4a84b]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 11.5V14m0-2.5v-6a1.5 1.5 0 113 0m-3 6a1.5 1.5 0 00-3 0v2a7.5 7.5 0 0015 0v-5a1.5 1.5 0 00-3 0m-6-3V11m0-5.5v-1a1.5 1.5 0 013 0v1m0 0V11m0-5.5a1.5 1.5 0 013 0v3m0 0V11"/></svg>
             )}
@@ -52,8 +56,8 @@ const brand = siteConfig.brand;
               <svg class="w-7 h-7 text-[#d4a84b]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.066 2.573c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.573 1.066c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.066-2.573c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
             )}
           </div>
-          <h4 class="text-white font-semibold text-sm mb-1">{product.name}</h4>
-          <p class="text-[#a3a3a3] text-xs">{product.desc}</p>
+          <h4 class="text-white font-semibold text-sm mb-2">{product.name}</h4>
+          <p class="text-[#a3a3a3]/70 text-xs leading-relaxed">{product.desc}</p>
         </div>
       ))}
     </div>

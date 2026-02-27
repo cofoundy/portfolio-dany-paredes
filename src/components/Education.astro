@@ -4,21 +4,24 @@ import { siteConfig } from "../config";
 const education = siteConfig.education;
 ---
 
-<section id="formacion" class="py-16 md:py-20 bg-[#111111]">
+<section id="formacion" class="py-20 md:py-24 bg-[#111111]">
   <div class="max-w-6xl mx-auto px-6">
 
-    <div class="text-center mb-12 reveal">
+    <div class="text-center mb-14 reveal">
       <span class="text-[#d4a84b] text-sm uppercase tracking-[0.3em] font-medium">Formación</span>
-      <h2 class="font-['Bebas_Neue'] text-4xl md:text-5xl text-white mt-3">Educación Técnica</h2>
-      <div class="w-16 h-[2px] bg-[#d4a84b]/40 mx-auto mt-4"></div>
+      <h2 class="font-['Bebas_Neue'] text-4xl md:text-6xl text-white mt-3">Educación Técnica</h2>
+      <div class="w-20 h-[2px] bg-gradient-to-r from-transparent via-[#d4a84b]/60 to-transparent mx-auto mt-5"></div>
     </div>
 
-    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-3xl mx-auto">
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-5 max-w-3xl mx-auto">
       {education.map((edu, i) => (
-        <div class={`reveal stagger-${i + 1} bg-[#1a1a1a] border border-[#2a2a2a] rounded-xl p-5 text-center card-hover gold-glow`}>
-          <div class="font-['Bebas_Neue'] text-lg text-[#d4a84b] tracking-wider">{edu.school}</div>
+        <div class={`reveal stagger-${i + 1} group gold-border-gradient rounded-xl p-6 text-center`}>
+          <div class="w-10 h-10 rounded-lg bg-[#d4a84b]/10 flex items-center justify-center mx-auto mb-4 border border-[#d4a84b]/15 group-hover:bg-[#d4a84b]/15 transition-colors">
+            <svg class="w-5 h-5 text-[#d4a84b]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/></svg>
+          </div>
+          <div class="font-['Bebas_Neue'] text-xl text-[#d4a84b] tracking-wider">{edu.school}</div>
           <p class="text-white text-sm mt-2 font-medium">{edu.degree}</p>
-          <p class="text-[#a3a3a3] text-xs mt-1">{edu.period}</p>
+          <p class="text-[#a3a3a3]/50 text-xs mt-1.5">{edu.period}</p>
         </div>
       ))}
     </div>
