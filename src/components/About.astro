@@ -1,0 +1,66 @@
+---
+// "El Fighter" section — Dany's combat sports background
+import { siteConfig } from "../config";
+const fighter = siteConfig.fighter;
+---
+
+<section id="fighter" class="py-20 md:py-28 bg-[#0a0a0a]">
+  <div class="max-w-6xl mx-auto px-6">
+
+    <!-- Section title -->
+    <div class="text-center mb-16 reveal">
+      <span class="text-[#d4a84b] text-sm uppercase tracking-[0.3em] font-medium">El Fighter</span>
+      <h2 class="font-['Bebas_Neue'] text-5xl md:text-6xl text-white mt-3">{fighter.title}</h2>
+      <div class="w-16 h-[2px] bg-[#d4a84b]/40 mx-auto mt-4"></div>
+    </div>
+
+    <div class="max-w-4xl mx-auto">
+      <!-- Main narrative -->
+      <div class="reveal stagger-1 grid md:grid-cols-5 gap-8 md:gap-12 items-center mb-12">
+        <!-- Text -->
+        <div class="md:col-span-3">
+          <p class="text-[#a3a3a3] text-lg leading-relaxed">{fighter.description}</p>
+          <div class="flex flex-wrap gap-3 mt-6">
+            {fighter.roles.map((role) => (
+              <span class="px-4 py-2 bg-[#1a1a1a] border border-[#2a2a2a] rounded-lg text-sm text-[#d4a84b]">
+                {role}
+              </span>
+            ))}
+          </div>
+          <p class="text-[#a3a3a3]/60 text-sm mt-4">
+            {fighter.gym} · {fighter.period}
+          </p>
+        </div>
+
+        <!-- Boxing icon visual -->
+        <div class="md:col-span-2 flex justify-center">
+          <div class="relative w-48 h-48 md:w-56 md:h-56">
+            <!-- Outer ring -->
+            <div class="absolute inset-0 rounded-full border-2 border-[#d4a84b]/20"></div>
+            <!-- Inner ring -->
+            <div class="absolute inset-4 rounded-full border border-[#d4a84b]/10"></div>
+            <!-- Center icon -->
+            <div class="absolute inset-0 flex items-center justify-center">
+              <svg class="w-20 h-20 text-[#d4a84b]/30" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M7 11.5V14m0-2.5v-6a1.5 1.5 0 113 0m-3 6a1.5 1.5 0 00-3 0v2a7.5 7.5 0 0015 0v-5a1.5 1.5 0 00-3 0m-6-3V11m0-5.5v-1a1.5 1.5 0 013 0v1m0 0V11m0-5.5a1.5 1.5 0 013 0v3m0 0V11"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quote -->
+      <div class="reveal stagger-2">
+        <blockquote class="relative bg-[#1a1a1a] border-l-4 border-[#d4a84b] rounded-r-xl p-8">
+          <svg class="absolute top-4 right-4 w-8 h-8 text-[#d4a84b]/10" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10H14.017zM0 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10H0z"/></svg>
+          <p class="font-['Playfair_Display'] italic text-white text-xl md:text-2xl leading-relaxed">
+            {siteConfig.quote.text}
+          </p>
+          <cite class="block mt-4 text-[#d4a84b] text-sm not-italic">— {siteConfig.quote.author}</cite>
+        </blockquote>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="h-[2px] bar-shimmer"></div>

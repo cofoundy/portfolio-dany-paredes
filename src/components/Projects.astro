@@ -1,0 +1,51 @@
+---
+// Expertise — Skills grid
+import { siteConfig } from "../config";
+const expertise = siteConfig.expertise;
+---
+
+<section id="expertise" class="py-20 md:py-28 bg-[#0a0a0a]">
+  <div class="max-w-6xl mx-auto px-6">
+
+    <!-- Section title -->
+    <div class="text-center mb-16 reveal">
+      <span class="text-[#d4a84b] text-sm uppercase tracking-[0.3em] font-medium">Expertise</span>
+      <h2 class="font-['Bebas_Neue'] text-5xl md:text-6xl text-white mt-3">Competencias</h2>
+      <div class="w-16 h-[2px] bg-[#d4a84b]/40 mx-auto mt-4"></div>
+    </div>
+
+    <!-- Skills grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-4xl mx-auto">
+      {expertise.map((group, i) => (
+        <div class={`reveal stagger-${i + 1} bg-[#1a1a1a] border border-[#2a2a2a] rounded-xl p-6 card-hover gold-glow`}>
+          <h3 class="font-['Bebas_Neue'] text-2xl text-[#d4a84b] tracking-wider mb-4">{group.category}</h3>
+          <ul class="space-y-2">
+            {group.skills.map((skill) => (
+              <li class="flex items-center gap-3 text-[#a3a3a3] text-sm">
+                <span class="w-1.5 h-1.5 rounded-full bg-[#d4a84b]/60 flex-shrink-0"></span>
+                {skill}
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+
+    <!-- Languages -->
+    <div class="reveal mt-12 max-w-4xl mx-auto">
+      <div class="bg-[#1a1a1a] border border-[#2a2a2a] rounded-xl p-6">
+        <h3 class="font-['Bebas_Neue'] text-2xl text-[#d4a84b] tracking-wider mb-4">Idiomas</h3>
+        <div class="flex flex-wrap gap-6">
+          {siteConfig.languages.map((lang) => (
+            <div class="flex items-center gap-3">
+              <span class="text-white font-medium text-sm">{lang.name}</span>
+              <span class="text-[#a3a3a3] text-xs px-2 py-0.5 bg-[#2a2a2a] rounded">{lang.level}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="h-[2px] bar-shimmer"></div>

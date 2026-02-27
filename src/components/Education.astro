@@ -1,0 +1,26 @@
+---
+// Formación — compact education
+import { siteConfig } from "../config";
+const education = siteConfig.education;
+---
+
+<section id="formacion" class="py-16 md:py-20 bg-[#111111]">
+  <div class="max-w-6xl mx-auto px-6">
+
+    <div class="text-center mb-12 reveal">
+      <span class="text-[#d4a84b] text-sm uppercase tracking-[0.3em] font-medium">Formación</span>
+      <h2 class="font-['Bebas_Neue'] text-4xl md:text-5xl text-white mt-3">Educación Técnica</h2>
+      <div class="w-16 h-[2px] bg-[#d4a84b]/40 mx-auto mt-4"></div>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-3xl mx-auto">
+      {education.map((edu, i) => (
+        <div class={`reveal stagger-${i + 1} bg-[#1a1a1a] border border-[#2a2a2a] rounded-xl p-5 text-center card-hover gold-glow`}>
+          <div class="font-['Bebas_Neue'] text-lg text-[#d4a84b] tracking-wider">{edu.school}</div>
+          <p class="text-white text-sm mt-2 font-medium">{edu.degree}</p>
+          <p class="text-[#a3a3a3] text-xs mt-1">{edu.period}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
